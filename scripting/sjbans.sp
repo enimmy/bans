@@ -1,5 +1,4 @@
 #include <sourcemod>
-
 #include <ripext>
 
 #pragma newdecls required
@@ -58,7 +57,7 @@ public void OnClientPostAdminCheck(int client)
 	{
 		return;
 	}
-	
+
 	if(!RefreshClientStatus(client))
 	{
 		CreateTimer(0.5, Auth_Timer, client, TIMER_REPEAT);
@@ -79,7 +78,7 @@ bool RefreshClientStatus(int client)
 	gB_TimerBanned[client] = true;
 
 	char steamId[32];
-	
+
 	if(!GetClientAuthId(client, AuthId_Steam3, steamId, sizeof(steamId)))
 	{
 		return false;
